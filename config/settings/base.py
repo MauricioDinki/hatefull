@@ -47,6 +47,7 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'hatefull.apps.questions',
     'hatefull.apps.tests',
+    'hatefull.apps.answers',
 )
 
 INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + LOCAL_APPS
