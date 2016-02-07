@@ -8,8 +8,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views import defaults as error_views
 
+from hatefull.apps.tests import urls as test_urls
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    url(r'^', include(test_urls, namespace='test')),
 ]
 
 if settings.DEBUG:
