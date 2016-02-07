@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 """
 Django settings for hatefull
 For more information on this file, see
@@ -39,6 +40,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'suit',
+    'social.apps.django_app.default',
 )
 
 # Apps specific for this project go here.
@@ -115,6 +117,8 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -129,6 +133,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # AUTHENTICATION CONFIGURATION
 # -----------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -137,3 +142,11 @@ AUTHENTICATION_BACKENDS = (
 SUIT_CONFIG = {
     'ADMIN_NAME': 'hatefull',
 }
+
+# PYTHON SOCIAL AUTH CONFIGURATION
+# -----------------------------------------------------------------------------
+SOCIAL_AUTH_FACEBOOK_KEY = env("SOCIAL_AUTH_FACEBOOK_KEY", None)
+SOCIAL_AUTH_FACEBOOK_SECRET = env("SOCIAL_AUTH_FACEBOOK_SECRET", None)
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/"
+SOCIAL_AUTH_LOGN_URL = '/login/'

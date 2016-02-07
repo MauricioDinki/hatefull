@@ -9,7 +9,15 @@
     <h1>{{ test.name }} from {{ test.user.username }}</h1>
     <ul>
       {% for question in test.questions.all %}
-        <li>Question</li>
+        <li>
+          {{ question.question }}
+          <ul>
+            <li>{{ question.correct_answer }}</li>
+            <li>{{ question.wrong_answer_1 }}</li>
+            <li>{{ question.wrong_answer_2 }}</li>
+            <li>{{ question.wrong_answer_3 }}</li>
+          </ul>
+        </li>
       {% endfor %}
 
     </ul>

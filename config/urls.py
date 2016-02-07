@@ -9,11 +9,14 @@ from django.contrib import admin
 from django.views import defaults as error_views
 
 from hatefull.apps.tests import urls as test_urls
+from hatefull.apps.xauth import urls as xauth_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^', include('social.apps.django_app.urls', namespace='social')),
 
     url(r'^', include(test_urls, namespace='test')),
+    url(r'^', include(xauth_urls, namespace='xauth')),
 ]
 
 if settings.DEBUG:
