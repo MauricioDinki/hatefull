@@ -22,3 +22,4 @@ django-suit
 
 # Your custom requirements go here
 # -----------------------------------------------------------------------------
+python-social-auth

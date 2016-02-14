@@ -4,6 +4,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from hatefull.apps.answers.models import Answer
+
 
 class Question(models.Model):
     user = models.ForeignKey(
@@ -36,6 +38,13 @@ class Question(models.Model):
         blank=False,
         null=False,
         max_length=50,
+    )
+
+    answers = models.ManyToManyField(
+        Answer,
+        related_name='answers',
+        blank=True,
+
     )
 
     def __unicode__(self):
