@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('answer', models.CharField(max_length=50)),
                 ('question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='questions.Question', verbose_name=b'Question')),
                 ('question_owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='owner', to=settings.AUTH_USER_MODEL, verbose_name=b'Question owner')),
-                ('test', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='tests.Test', verbose_name=b'Test')),
+                ('tests', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='tests.Test', verbose_name=b'Test')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='user', to=settings.AUTH_USER_MODEL, verbose_name=b'User')),
             ],
         ),

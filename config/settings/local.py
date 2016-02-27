@@ -59,7 +59,7 @@ INSTALLED_APPS += ('django_extensions', )
 
 # TESTING
 # -----------------------------------------------------------------------------
-TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+TEST_RUNNER = 'django.tests.runner.DiscoverRunner'
 
 # STATIC FILE CONFIGURATION
 # -----------------------------------------------------------------------------

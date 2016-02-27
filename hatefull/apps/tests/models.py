@@ -20,5 +20,5 @@ class Test(models.Model):
     )
     questions = models.ManyToManyField(Question)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name

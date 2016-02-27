@@ -22,6 +22,6 @@ class Migration(migrations.Migration):
         ),
         migrations.RemoveField(
             model_name='answer',
-            name='test',
+            name='tests',
         ),
     ]
